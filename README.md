@@ -14,10 +14,14 @@ Often though:
 
 I.e. often you can do with a smaller version, of lesser quality, with fewer colors, that is a small fraction of the size of the original.
 
+This tools automatically produces a range of sizes/format/quality alternatives to choose from.
+
+# Why?
+
 I for example use this to embed (much much) smaller images in Tidllywiki (which base-64 encodes and embeds all of your notes' pics into a single html file, so a little regard for compactness really pays off).
 
 # How?
 
 It watches a specific directory for new screenshots, and when it finds one, it gets to work producing a number of good "squashed" candidates, in a range of different formats and sizes.
 
-Pleas see the .sh file for more info.
+Please see the .sh file for more info.
