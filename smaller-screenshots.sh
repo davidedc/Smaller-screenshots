@@ -26,13 +26,16 @@ if [ ! -z "$(ls -A *.png)" ]; then
     squoosh-cli --resize '{"enabled":true,"width":600,"method":"lanczos3","fitMethod":"contain","premultiply":true,"linearRGB":true}' --mozjpeg '{"quality":75,"baseline":false,"arithmetic":false,"progressive":true,"optimize_coding":true,"smoothing":0,"color_space":3,"quant_table":3,"trellis_multipass":false,"trellis_opt_zero":false,"trellis_opt_table":false,"trellis_loops":1,"auto_subsample":true,"chroma_subsample":2,"separate_chroma_quality":false,"chroma_quality":75}' -d $filename -s "-squashed-600w" "$i"
     squoosh-cli --resize '{"enabled":true,"width":800,"method":"lanczos3","fitMethod":"contain","premultiply":true,"linearRGB":true}' --mozjpeg '{"quality":75,"baseline":false,"arithmetic":false,"progressive":true,"optimize_coding":true,"smoothing":0,"color_space":3,"quant_table":3,"trellis_multipass":false,"trellis_opt_zero":false,"trellis_opt_table":false,"trellis_loops":1,"auto_subsample":true,"chroma_subsample":2,"separate_chroma_quality":false,"chroma_quality":75}' -d $filename -s "-squashed-800w" "$i"
 
-    squoosh-cli --resize '{"enabled":true,"width":600,"method":"lanczos3","fitMethod":"contain","premultiply":true,"linearRGB":true}' --quant '{"enabled":true,"zx":0,"maxNumColors":16,"dither":1}' --oxipng '{"level":3}' -d $filename -s "-squashed-16-600w" "$i"
-    squoosh-cli --resize '{"enabled":true,"width":800,"method":"lanczos3","fitMethod":"contain","premultiply":true,"linearRGB":true}' --quant '{"enabled":true,"zx":0,"maxNumColors":16,"dither":1}' --oxipng '{"level":3}' -d $filename -s "-squashed-16-800w" "$i"
+    squoosh-cli --quant '{"enabled":true,"numColors":16,"dither":1}' --oxipng '{"level":3}' -d $filename -s "-squashed" "$i"
 
-    squoosh-cli --resize '{"enabled":true,"width":600,"method":"lanczos3","fitMethod":"contain","premultiply":true,"linearRGB":true}' --quant '{"enabled":true,"zx":0,"maxNumColors":4,"dither":1}' --oxipng '{"level":3}' -d $filename -s "-squashed-4-600w" "$i"
-    squoosh-cli --resize '{"enabled":true,"width":800,"method":"lanczos3","fitMethod":"contain","premultiply":true,"linearRGB":true}' --quant '{"enabled":true,"zx":0,"maxNumColors":4,"dither":1}' --oxipng '{"level":3}' -d $filename -s "-squashed-4-800w" "$i"
+    squoosh-cli --resize '{"enabled":true,"width":1200,"method":"lanczos3","fitMethod":"contain","premultiply":true,"linearRGB":true}' --quant '{"enabled":true,"numColors":16,"dither":1}' --oxipng '{"level":3}' -d $filename -s "-squashed-16-1200w" "$i"
+    squoosh-cli --resize '{"enabled":true,"width":1200,"method":"lanczos3","fitMethod":"contain","premultiply":true,"linearRGB":true}' --quant '{"enabled":true,"numColors":5,"dither":1}' --oxipng '{"level":3}' -d $filename -s "-squashed-5-1200w" "$i"
 
-    squoosh-cli --quant '{"enabled":true,"zx":0,"maxNumColors":16,"dither":1}' --oxipng '{"level":3}' -d $filename -s "-squashed" "$i"
+    squoosh-cli --resize '{"enabled":true,"width":800,"method":"lanczos3","fitMethod":"contain","premultiply":true,"linearRGB":true}' --quant '{"enabled":true,"numColors":16,"dither":1}' --oxipng '{"level":3}' -d $filename -s "-squashed-16-800w" "$i"
+    squoosh-cli --resize '{"enabled":true,"width":800,"method":"lanczos3","fitMethod":"contain","premultiply":true,"linearRGB":true}' --quant '{"enabled":true,"numColors":5,"dither":1}' --oxipng '{"level":3}' -d $filename -s "-squashed-5-800w" "$i"
+
+    squoosh-cli --resize '{"enabled":true,"width":600,"method":"lanczos3","fitMethod":"contain","premultiply":true,"linearRGB":true}' --quant '{"enabled":true,"numColors":16,"dither":1}' --oxipng '{"level":3}' -d $filename -s "-squashed-16-600w" "$i"
+    squoosh-cli --resize '{"enabled":true,"width":600,"method":"lanczos3","fitMethod":"contain","premultiply":true,"linearRGB":true}' --quant '{"enabled":true,"numColors":5,"dither":1}' --oxipng '{"level":3}' -d $filename -s "-squashed-5-600w" "$i"
 
     mv "$i" originals
   done
