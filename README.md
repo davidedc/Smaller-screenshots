@@ -8,9 +8,9 @@ When you take screenshots in OSX, by default you get a lossless .png of the scre
 
 Often though:
 
-# you don't need such a big file/image
-# different screenshots are better squashed in different formats
-# a smaller size can do
+- you don't need such a big file/image
+- different screenshots are better squashed in different formats
+- a smaller size can do
 
 I.e. often you can do with a smaller version, of lesser quality, with fewer colors, that is a small fraction of the size of the original.
 
